@@ -15,6 +15,7 @@ body('password').isLength({min: 5})]
     let success = false;
         // if error retun them
     const result = validationResult(req);
+    
     if (!result.isEmpty()) {
     return res.status(400).json({success, errors: result.array() });
     }

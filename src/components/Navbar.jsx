@@ -16,7 +16,7 @@ function Navbar() {
   }
   return (
     <>
-      <nav style={{backgroundColor: "#12192c", color:"white"}} className="navbar navbar-expand-lg" data-bs-theme="dark">
+      <nav className="nav_f navbar navbar-expand-lg" data-bs-theme="dark">
         <div className="container-fluid">
           <Link className="navbar-brand mx-5" to="/">
             iNotebook
@@ -30,7 +30,7 @@ function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon "></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -46,7 +46,7 @@ function Navbar() {
               </li>
             </ul>
             
-              {!localStorage.getItem('token') ? <div> <Link className="btn btn-outline-theme ms-5 " type="submit" to="/login">Login
+              {!localStorage.getItem('token') ? <div> <Link className="btn btn-outline-theme nav-item ms-5 " type="submit" to="/login">Login
               
               </Link>
               <Link className="btn btn-theme mx-5 px-4 py-1" type="submit" to="/signup">

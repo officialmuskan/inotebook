@@ -41,24 +41,35 @@ export default function Notes(props) {
     
   return (
     <>
-    <div className="row my-3 " style={{color:"white"}}>
+    <div className="row my-3" style={{color:"white"}}>
                 <h1>YOUR NOTES</h1>
-                {notes.map((note)=>{
-                    return <Noteitems showAlert={showAlert} key={note._id} updateNote={updateNote} note = {note}/>
-                })}
+                {notes.length === 0 ? (
+        <p className='text-secondary'>Try Adding Some Note</p>
+    ) : (
+        notes.map((note) => {
+            return (
+                <Noteitems
+                    showAlert={showAlert}
+                    key={note._id}
+                    updateNote={updateNote}
+                    note={note}
+                />
+            );
+        })
+    )}
     </div>
     <Addnote showAlert = {showAlert}/>
     <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
             </button>
-            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
                 <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
+                    <div className="modal-content" style={{backgroundColor:"#12192ca5"}}>
+                        <div className="modal-header" style={{color:"white"}}>
                             <h5 className="modal-title" id="exampleModalLabel">Edit Note</h5>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" style={{backgroundColor:"white"}} className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div className="modal-body">
+                        <div className="modal-body" style={{color:"white"}}>
                             <form className="my-3">
                                 <div className="mb-3">
                                     <label htmlFor="title" className="form-label">Title</label>
@@ -76,8 +87,8 @@ export default function Notes(props) {
                             </form>
                         </div>
                         <div className="modal-footer">
-                            <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button disabled={note.etitle.length<5 || note.edescription.length<5} onClick={handleClick} type="button" className="btn btn-theme">Update Note</button>
+                            <button ref={refClose} type="button" className="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                            <button disabled={note.etitle.length<5 || note.edescription.length<5} onClick={handleClick} type="button" className="btn  btn-success">Update Note</button>
                         </div>
                     </div>
                 </div>

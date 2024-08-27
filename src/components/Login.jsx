@@ -40,25 +40,14 @@ export default function Login(props) {
 
     return (
         <>
-            {/* <div className='container col-md-4 mt-5'>
-            <form onSubmit={handleSubmit}>
-                <div classNameName="mb-3">
-                    <label htmlFor="email" classNameName="form-label">Email address</label>
-                    <input type="email" classNameName="form-control" value={credentials.email} onChange={onChange}  id="email" name="email" aria-describedby="emailHelp" />
-                    <div id="emailHelp" classNameName="form-text">We'll never share your email with anyone else.</div>
-                </div>
-                <div classNameName="mb-3">
-                    <label htmlFor="password" classNameName="form-label">Password</label>
-                    <input type="password" value={credentials.password} onChange={onChange} classNameName="form-control" name="password" id="password" />
-                </div>
 
-                <button type="submit" classNameName="btn btn-primary">Submit</button>
-            </form>
-            </div> */}
-            <div id="main-wrapper" className="container">
-    <div className="row justify-content-center">
-        <div className="col-xl-10">
-            <div className="card border-0">
+
+            
+            <div id="main-wrapper" className="container" >
+    <div className="row justify-content-center" >
+        <div className="col-xl-10" style={{boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+    }}>
+            <div className="card border-0" style={{backgroundColor:"#12192ca5", color:"white"}}>
                 <div className="card-body p-0">
                     <div className="row no-gutters">
                         <div className="col-lg-6">
@@ -68,7 +57,7 @@ export default function Login(props) {
                                 </div>
 
                                 <h6 className="h5 mb-0">Welcome back!</h6>
-                                <p className="text-muted mt-2 mb-5">Enter your email address and password to access admin panel.</p>
+                                <p className="mt-2 mb-5">Enter your email address and password to access admin panel.</p>
 
                                 <form onSubmit={handleSubmit}>
                                     <div className="form-group">
@@ -83,7 +72,7 @@ export default function Login(props) {
                                     </div>
                                     <button type="submit" className="btn btn-theme">Login</button>
                                     {/* <a href="#l" className="forgot-link float-right text-primary">Forgot password?</a> */}
-                                    <p className="text-muted text-center mt-3 mb-0">Don't have an account? <Link to="/signup" className="text-primary ml-1">register</Link></p>
+                                    <p className="text-center mt-3 mb-0">Don't have an account? <Link to="/signup" className="text-primary ml-1">register</Link></p>
 
                                 </form>
                             </div>
