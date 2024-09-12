@@ -8,6 +8,8 @@ import NoteState from './context/notes/notestate';
 import Alert from './components/Alert';
 import Login from './components/Login';
 import Signp from './components/Signp';
+import AddNote from './components/Addnote';
+import Display from './components/Display';
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -39,6 +41,13 @@ function App() {
               />
               <Route
                 exact
+                path="addnote/*"
+                element={
+                  <AddNote showAlert={showAlert}/>
+                }
+              />
+              <Route
+                exact
                 path="about/*"
                 element={
                   <About />
@@ -56,6 +65,13 @@ function App() {
                 path="signup/*"
                 element={
                   <Signp showAlert={showAlert}/>
+                }
+              />
+              <Route
+                exact
+                path="display/:id/*"
+                element={
+                  <Display/>
                 }
               />
               </Routes>

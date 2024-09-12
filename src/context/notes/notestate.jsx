@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import react, { useEffect, useState } from "react";
 import NoteContext from "./notecontext";
 const NoteState = (props)=>{
     // const s1 = {
@@ -42,8 +42,11 @@ const NoteState = (props)=>{
     //     }
     // ]
     const notesin = []
+    const onenote={}
+    
     const host = "http://localhost:5000"
     const [notes, setNotes] = useState(notesin)
+    const[note, setNote] = useState(onenote);
     const fetchNote = async()=>{
       const response = await fetch("http://localhost:5000/api/notes/fetchallnotes",
       {
@@ -58,6 +61,22 @@ const NoteState = (props)=>{
       const json = await response.json();
       console.log(json)
       setNotes(json)    
+    }
+    const fetchaNote = async(id)=>{
+      console.log("bjja");
+      const response = await fetch(`${host}/api/notes/fetch/${id}`,
+        {
+          method:"GET",
+          headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem('token')
+          
+        }});
+      const json = await response.json();
+      console.log(json)
+      setNote(json)
+      
+      
     }
     //ADD
     const addNote = async(title, description, tag)=>{
@@ -78,6 +97,7 @@ const NoteState = (props)=>{
             const note = await response.json();
             setNotes(notes.concat(note))
     }
+    
     //DELETE
     const delNote = async(id)=>{
       const response = await fetch(`${host}/api/notes/deletenote/${id}`,
@@ -124,7 +144,7 @@ const NoteState = (props)=>{
     }
     
     return(
-        <NoteContext.Provider value={{notes, addNote,delNote, fetchNote, editNote}}>
+        <NoteContext.Provider value={{notes, addNote,delNote, fetchNote, editNote,note, fetchaNote}}>
             {props.children}
         </NoteContext.Provider>
     )

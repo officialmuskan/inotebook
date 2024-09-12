@@ -16,7 +16,7 @@ body{
 }
 .account-block {
     padding: 0;
-    background-image: url("./components/Screenshot 2023-10-14 194920.png");
+    /* background-image: url("./components/Screenshot 2023-10-14 194920.png"); */
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;

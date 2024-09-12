@@ -16,6 +16,19 @@ router.get('/fetchallnotes', fetchUser, async (req, res)=>{
     }
     
 })
+router.get('/fetch/:id', fetchUser, async(req, res)=>{
+    try{
+        const note = await Notes.findById(req.params.id)
+        if(!note){
+            res.status(404).send("not found")
+        }
+        res.json({note});
+    }
+    catch(error){
+        console.error(error.message)
+        res.status(500).send("eror occr")
+    }
+})
 
 router.post('/addnote', fetchUser,[body('title', 'enter a valid name').isLength({min:3}),
 body('description').isLength({min: 5})], async (req, res)=>{   
