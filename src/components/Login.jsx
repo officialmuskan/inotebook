@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { useNavigate,Link } from 'react-router-dom'
-import Img from "../../public/"
+import Img from "../assets/undraw_authentication_re_svpt.svg"
 //use history let u redirect to other page
 
 export default function Login(props) {
@@ -81,7 +81,7 @@ export default function Login(props) {
                         <div className="col-lg-6 d-none d-lg-inline-block">
                             <div className="account-block rounded-right">
                                 <div className="overlay rounded-right"></div>
-                                <Img/>
+                                
                             </div>
                         </div>
                     </div>

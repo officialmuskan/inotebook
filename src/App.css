@@ -16,9 +16,9 @@ body{
 }
 .account-block {
     padding: 0;
-    /* background-image: url("./components/Screenshot 2023-10-14 194920.png"); */
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url("./components/undraw_secure_login_pdn4.png");
+    background-repeat: repeat-y;
+    background-size:contain;
     height: 100%;
     position: relative;
 }
