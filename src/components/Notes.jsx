@@ -11,7 +11,7 @@ export default function Notes(props) {
     const{notes, fetchNote, editNote} = context
     const{showAlert} = props
     useEffect(() => {
-        console.log(localStorage.getItem('token'))
+        // console.log(localStorage.getItem('token'))
         if(localStorage.getItem('token'))
         {
             fetchNote();

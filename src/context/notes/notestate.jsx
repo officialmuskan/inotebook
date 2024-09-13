@@ -59,11 +59,11 @@ const NoteState = (props)=>{
         
       });
       const json = await response.json();
-      console.log(json)
+      
       setNotes(json)    
     }
     const fetchaNote = async(id)=>{
-      console.log("bjja");
+      
       const response = await fetch(`${host}/api/notes/fetch/${id}`,
         {
           method:"GET",
@@ -73,7 +73,7 @@ const NoteState = (props)=>{
           
         }});
       const json = await response.json();
-      console.log(json)
+      
       setNote(json)
       
       
@@ -110,7 +110,7 @@ const NoteState = (props)=>{
         }
       });
         const json = response.json();
-        console.log(json)
+        
         const newNote = notes.filter((note)=>{return note._id !== id})
         setNotes(newNote)
         
@@ -139,7 +139,7 @@ const NoteState = (props)=>{
         }
       }  
       
-        console.log(json)
+        
       setNotes(newNotes);
     }
     

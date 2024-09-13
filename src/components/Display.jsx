@@ -63,7 +63,6 @@ export default function Display(props){
     // const {note} = props;
     //for note-display
     const {id} = useParams();
-    console.log(id)
     const {fetchaNote,note,editNote} = context;
     useEffect(()=>{           
         fetchaNote(id);   

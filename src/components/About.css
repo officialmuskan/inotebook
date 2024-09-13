@@ -110,27 +110,16 @@ margin:50px auto
         border-radius: none;
     }
     .content h2{
-        font-size: 20px;
+        font-size: 50px;
         margin-top: 50px;
     }
     .content span{
         margin: 20px 0;
     }
     .content p{
-        font-size: 14px;
+        font-size: 20px;
     }
-    .links li a{
-        font-size: 14px;
-    }
-    .links{
-        margin: 5px 0;
-    }
-    .links li{
-        padding: 6px 10px;
-    }
-    .icons li i{
-        font-size: 15px;
-    }
+    
 }
 .credit{
     text-align: center;
