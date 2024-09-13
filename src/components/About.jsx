@@ -10,7 +10,7 @@ function About(){
             <section>
             <div className = "content">
                 <h2>About Us</h2>
-                <p>Welcome to My Notes App, your personal space for keeping track of your thoughts, ideas, and important information. Our app makes it easy to create, manage, and organize your notes in a simple and intuitive way.</p>
+                <p>Welcome to Inote, your personal space for keeping track of your thoughts, ideas, and important information. Our app makes it easy to create, manage, and organize your notes in a simple and intuitive way.</p>
                 
                 
             </div>
