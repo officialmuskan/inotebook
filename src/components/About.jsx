@@ -27,6 +27,7 @@ function About(){
                 <li>Edit Notes: Update and revise your notes whenever you need to make changes.</li>
                 <li>Delete Notes: Remove unwanted or completed notes to keep your workspace tidy.</li>
                 <li>User Authentication: Secure your notes by signing in and enjoy a personalized experience.</li>
+                <li>Mini Features: Copy and Clear Description, Display No of charachters and Date on which created. </li>
                 <div className = "vertical-line"></div>
                 <div className = "vertical-line"></div>
                     
