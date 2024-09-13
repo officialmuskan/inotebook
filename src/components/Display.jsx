@@ -18,53 +18,53 @@ function countchar(des){
 
 }
 export default function Display(props){
+    const context = useContext(NoteContext);
+    //For Copying
+    const handlecopy = (text)=>{
+        if(text.length!==0)
+        {navigator.clipboard.writeText(text)
+        props.showAlert("Text Copied !! ", "success") }   
+    }
+    //For Editing
     const ref = useRef(null)
     const refClose = useRef(null)
-    const [notes, setNote] = useState({id: "", etitle: "", edescription: "", etag: ""})
-    const context = useContext(NoteContext);
-    
+    const [notes, setNote] = useState({id: "", etitle: "", edescription: "", etag: ""}) 
     const updateNote = (currentNote) => {
         ref.current.click();
         setNote({id: currentNote._id, etitle: currentNote.title, edescription: currentNote.description, etag:currentNote.tag})
-
-        // console.log
     }
     const onChange = (e)=>{
         setNote({...notes, [e.target.name]: e.target.value})
     }
+    const handleClick = async(e)=>{ 
+        await editNote(notes.id, notes.etitle, notes.edescription, notes.etag)
+        await fetchaNote(id)
+        refClose.current.click();
+        props.showAlert("Note Edited", "success")
+    }
     // const { notes, updateNote } = props;
     // const {note} = props;
+    //for note-display
     const {id} = useParams();
     console.log(id)
-    
     const {fetchaNote,note,editNote} = context;
-//    console.log("hdhha")
-// fetchaNote(id)
-    useEffect(()=>{  
-        console.log("hdhha")     
+    useEffect(()=>{           
         fetchaNote(id);   
     },[]);
-    console.log(note)
-    
-// console.log(note.note.title);
-const handleClick = async(e)=>{ 
-     await editNote(notes.id, notes.etitle, notes.edescription, notes.etag)
-     await fetchaNote(id)
-    refClose.current.click();
-    
-    
-    // props.showAlert("Note Edited", "success")
-}
-
-     const c = countchar(note?.note?.description)
+   
+    const c = countchar(note?.note?.description)
     return(
         <>  
      <div style={{color:"white"}}>
-        <div className="row">
-        <h2 className="col">Title : {note?.note?.title}</h2>
-        <i style={{color:"white"}} className='far col fa-edit mx-3' onClick={()=>{updateNote(note?.note)}}></i>
+        <div className="row-md-6">
+        <h2 className="col">Title : {note?.note?.title} 
+        
+        <i style={{color:"white", fontSize:"17px"}} className='far col fa-edit mx-3' onClick={()=>{updateNote(note?.note)}}></i>
+        </h2>
         </div>
-        <h6 className="text-secondary">{note?.note?.date.slice(0,10)} {note?.note?.date.slice(11,16)} | {c} charachters</h6>
+        <br></br>
+        <h6 className="text-secondary">{note?.note?.date.slice(0,10)} {note?.note?.date.slice(11,16)} | {c} charachters <i style={{color:"grey"}} className='far col fa-copy mx-3' onClick={()=>handlecopy(note?.note?.description)}></i>
+        </h6>
         <p style={{ whiteSpace: 'pre-line',fontSize:"1.5rem" }}>{note?.note?.description}</p>
         {/* {/* <button type="button">update</button> */}
       </div> 

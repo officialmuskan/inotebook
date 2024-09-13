@@ -71,7 +71,7 @@ function App() {
                 exact
                 path="display/:id/*"
                 element={
-                  <Display/>
+                  <Display showAlert={showAlert}/>
                 }
               />
               </Routes>
