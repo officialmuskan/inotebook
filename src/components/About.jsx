@@ -11,13 +11,7 @@ function About(){
             <div className = "content">
                 <h2>About Us</h2>
                 <p>Welcome to My Notes App, your personal space for keeping track of your thoughts, ideas, and important information. Our app makes it easy to create, manage, and organize your notes in a simple and intuitive way.</p>
-                <ul className = "links">
-                    <li><a href = "#">Features</a></li>
-                    <div className = "vertical-line"></div>
-                    
-                    <div className = "vertical-line"></div>
-                    <li><a href = "#">contact</a></li>
-                </ul>
+                
                 
             </div>
             <div className = "content ">
